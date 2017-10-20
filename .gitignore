@@ -1,0 +1,4 @@
+app/
+var/logs
+var/mariadb
+.idea
