@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     openssl \
     git \
     unzip \
-    libicu-dev
+    libicu-dev \
+    vim
 
 # Get composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer && \
