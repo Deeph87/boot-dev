@@ -13,17 +13,16 @@ services:
             - ./app:/var/www/html
             - ./var/logs/php:/var/www/app/var/logs
 
-    nginx:
-        container_name: myNginx
-        image: nginx:alpine
+    httpd:
+        container_name: myApache
+        image: httpd:2.4.29
         ports:
             - 8080:80
         links:
             - php
         volumes:
-            - ./app:/var/www/html
-            - ./var/nginx:/etc/nginx/conf.d
-            - ./var/logs/nginx/:/var/log/nginx
+            - ./app:/usr/local/apache2/htdocs/
+            - ./var/apache2/httpd.conf:/usr/local/apache2/conf/httpd.conf
 
     mariadb:
         container_name: myMariaDB
