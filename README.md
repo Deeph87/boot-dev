@@ -1,6 +1,6 @@
 # boot-dev
 
-Just a fast **booter** of an PHP-Nginx-Mariadb development environment with docker
+Just a fast **booter** of an PHP-Apache2-Mariadb development environment with docker
 
 ### How to use ?
 
@@ -8,7 +8,7 @@ Just a fast **booter** of an PHP-Nginx-Mariadb development environment with dock
 * Open your terminal and go to the folder that you have just cloned
 * Just type :
     docker-compose up -d
-* It will launch three containers
+* It will launch two containers
 * Your project located to the "app" folder will be available at :
     localhost:8080
 * Default credentials which connect to the database are : 
