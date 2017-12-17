@@ -1,4 +1,4 @@
-FROM php:7.1.10-fpm
+FROM php:7.1.12-apache
 
 ENV TIMEZONE=Europe/Paris
 
