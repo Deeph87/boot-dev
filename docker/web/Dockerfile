@@ -34,4 +34,7 @@ RUN echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-x
 
 RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
+# Sharing spaces for confs
+COPY apache2.conf /etc/apache2/
+
 WORKDIR /var/www/html

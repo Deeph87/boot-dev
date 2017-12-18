@@ -12,7 +12,6 @@ services:
         volumes:
             - ./app:/var/www/html
             - ./var/logs/php:/var/www/app/var/logs
-            - apacheconf:/etc/apache2
 
     mariadb:
         container_name: myMariaDB
@@ -26,6 +25,3 @@ services:
             - 3306:3306
         volumes:
             - ./var/mariadb:/var/lib/mysql
-volumes:
-    apacheconf:
-        driver: local
