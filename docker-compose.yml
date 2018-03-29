@@ -1,21 +1,27 @@
-version: '2'
-
+version: '3.5'
 services:
-
     web:
-        container_name: myWeb
+        container_name: web
         build: docker/web
         ports:
             - 8080:80
         links:
-            - mariadb
+            - db
         volumes:
-            - ./app:/var/www/html
-            - ./var/logs/php:/var/www/app/var/logs
-
-    mariadb:
-        container_name: myMariaDB
-        image: mariadb:10.3.2
+            - .:/var/www/html
+            - ./docker/php/logs:/var/www/app/var/logs
+        depends_on:
+            - db
+        environment:
+            - DB_HOST=localhost
+            - DB_PORT=3306
+            - DB_NAME=name
+            - DB_USER=user
+            - DB_PASSWORD=password
+            - DB_ROOT_PASSWORD=root
+    db:
+        container_name: mysql
+        image: mysql:5.7.21
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: app
@@ -23,5 +29,3 @@ services:
             MYSQL_PASSWORD: password
         ports:
             - 3306:3306
-        volumes:
-            - ./var/mariadb:/var/lib/mysql
