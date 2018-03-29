@@ -1,19 +1,14 @@
 # boot-dev
 
-Just a fast **booter** of an PHP-Nginx-Mariadb development environment with docker
+A fast **booter** of a PHP-Nginx-MySQL development environment with docker
 
 ### How to use ?
 
-* Clone the project into your favorite folder
-* Open your terminal and go to the folder that you have just cloned
+* Clone the project
 * Just type :
-    docker-compose up -d
-* It will launch three containers
-* Your project located to the "app" folder will be available at :
-    localhost:8080
-* Default credentials which connect to the database are : 
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: app
-    MYSQL_USER: user
-    MYSQL_PASSWORD: password
-* You can edit it in the docker-compose file
+    `docker-compose up -d --build`
+* It will launch a development environment on http://localhost:8080 with : 
+    * root folder => public
+    * PHP 7.2.3
+    * Nginx
+    * MySQL 5.7.21

@@ -22,7 +22,7 @@ RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime && echo $TIMEZONE > /et
 RUN docker-php-ext-install pdo pdo_mysql intl
 
 # Enable errors
-RUN echo "error_log = /var/www/html/logs/php_error_log.log" >> /usr/local/etc/php/conf.d/php.ini
+RUN echo "error_log = /var/www/html/docker/php/logs/php_error_log.log" >> /usr/local/etc/php/conf.d/php.ini
 #RUN echo "error_reporting = e_all" >> /usr/local/etc/php/conf.d/php.ini
 RUN echo "log_errors = 1" >> /usr/local/etc/php/conf.d/php.ini
 RUN echo "display_errors = 1" >> /usr/local/etc/php/conf.d/php.ini
